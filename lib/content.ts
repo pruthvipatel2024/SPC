@@ -34,7 +34,6 @@ export const navLinks = [
   { label: 'Video Stories', href: '#stories' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Media & News', href: '#news' },
-  { label: 'Get Involved', href: '#volunteer' },
 ]
 
 export type VideoStory = {
