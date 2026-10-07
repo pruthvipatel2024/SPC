@@ -72,7 +72,7 @@ export function GallerySection() {
           </div>
         </Reveal>
 
-        <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((img, i) => (
               <motion.button
@@ -84,18 +84,17 @@ export function GallerySection() {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setActive(i)}
-                className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="group relative aspect-4/5 w-full overflow-hidden rounded-2xl border border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  width={800}
-                  height={i % 3 === 0 ? 1000 : 640}
-                  className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 <span className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/20" />
-                <span className="absolute bottom-3 left-3 rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="absolute bottom-3 left-3 rounded-full bg-background/95 backdrop-blur-sm px-3 py-1 text-xs font-medium text-foreground shadow-sm">
                   {img.category}
                 </span>
               </motion.button>

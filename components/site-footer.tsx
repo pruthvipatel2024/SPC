@@ -6,6 +6,7 @@ import { Wordmark } from '@/components/logo'
 const footerNav = [
   { label: 'About', href: '#about' },
   { label: 'Our Work', href: '#work' },
+  { label: 'Real Videos', href: '#videos' },
   { label: 'Impact', href: '#journey' },
   { label: 'Stories', href: '#stories' },
   { label: 'Gallery', href: '#gallery' },

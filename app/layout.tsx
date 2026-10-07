@@ -84,7 +84,7 @@ export default function RootLayout({
       addressRegion: 'Gujarat',
       addressCountry: 'IN',
     },
-    sameAs: ['https://www.instagram.com/shree.padma.charitable.trust'],
+    sameAs: ['https://www.instagram.com/shree.padma.charitable.trust/'],
   }
 
   return (

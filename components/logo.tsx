@@ -1,44 +1,60 @@
 import { cn } from '@/lib/utils'
 
 /**
- * Simple lotus ("Padma") wordmark placeholder. Replace `LogoMark` with the
- * organization's official logo asset when available.
+ * Official logo emblem of Shree Padma Charitable Trust (S.P.C. Seva Trust).
+ * Represents a parent and child figure nurtured within an open lotus ("Padma") blossom.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 48 48"
-      className={cn('h-9 w-9', className)}
+      viewBox="0 0 200 200"
+      className={cn('h-10 w-10 shrink-0 drop-shadow-sm', className)}
       fill="none"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M24 8c2.6 3.2 4 6.7 4 10.2 0 3.1-1.1 5.9-4 8.8-2.9-2.9-4-5.7-4-8.8C20 14.7 21.4 11.2 24 8Z"
-        className="fill-accent"
-      />
-      <path
-        d="M24 27c-3.2-2.6-6.7-4-10.2-4-2 0-3.9.4-5.8 1.4 1.3 3.5 3.6 6.2 6.9 8 3.2 1.7 6.4 2.1 9.1 1.6-.2-2.8-.1-5.1 0-7Z"
-        className="fill-primary"
-      />
-      <path
-        d="M24 27c3.2-2.6 6.7-4 10.2-4 2 0 3.9.4 5.8 1.4-1.3 3.5-3.6 6.2-6.9 8-3.2 1.7-6.4 2.1-9.1 1.6.2-2.8.1-5.1 0-7Z"
-        className="fill-primary opacity-80"
-      />
-      <circle cx="24" cy="34" r="3" className="fill-accent" />
+      {/* Circular White Badge */}
+      <circle cx="100" cy="100" r="98" fill="#ffffff" className="stroke-primary/10 stroke-1" />
+
+      {/* Official Sage / Lotus Green Graphic Elements */}
+      <g fill="#568782">
+        {/* Adult Head */}
+        <circle cx="114" cy="87" r="16" />
+
+        {/* Child Head */}
+        <circle cx="89.5" cy="115" r="9.5" />
+
+        {/* Parent Main Body Leaf */}
+        <path d="M 106 185 C 105 160 110 134 126 106 C 137 122 143 145 137 165 C 131 178 120 184 106 185 Z" />
+
+        {/* Child Inner Left Body Leaf */}
+        <path d="M 102 185 C 94 163 87 146 76 126 C 88 138 93 157 98 181 Z" />
+
+        {/* Left Outer Floating Leaf */}
+        <path d="M 50 144 C 54 136 65 140 70 148 C 65 156 55 154 50 144 Z" />
+
+        {/* Right Outer Floating Leaf */}
+        <path d="M 150 144 C 146 136 135 140 130 148 C 135 156 145 154 150 144 Z" />
+
+        {/* Left Bottom Horizontal Petal */}
+        <path d="M 100 186 C 75 187 52 178 48 160 C 65 158 86 168 100 186 Z" />
+
+        {/* Right Bottom Horizontal Petal */}
+        <path d="M 100 186 C 125 187 148 178 152 160 C 135 158 114 168 100 186 Z" />
+      </g>
     </svg>
   )
 }
 
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={cn('flex items-center gap-2.5', className)}>
+    <span className={cn('flex items-center gap-3', className)}>
       <LogoMark />
       <span className="flex flex-col leading-none">
-        <span className="font-serif text-base font-semibold tracking-tight text-primary">
+        <span className="font-serif text-lg font-semibold tracking-tight text-primary">
           Shree Padma
         </span>
-        <span className="text-[0.62rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+        <span className="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Charitable Trust
         </span>
       </span>

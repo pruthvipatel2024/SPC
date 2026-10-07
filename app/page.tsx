@@ -4,6 +4,7 @@ import { ImpactStrip } from '@/components/impact-strip'
 import { AboutSection } from '@/components/about-section'
 import { InitiativeSection } from '@/components/initiative-section'
 import { OurWork } from '@/components/our-work'
+import { VideoSection } from '@/components/video-section'
 import { JourneySection } from '@/components/journey-section'
 import { StoriesSection } from '@/components/stories-section'
 import { GallerySection } from '@/components/gallery-section'
@@ -26,6 +27,7 @@ export default function Page() {
         <AboutSection />
         <InitiativeSection />
         <OurWork />
+        <VideoSection />
         <JourneySection />
         <StoriesSection />
         <GallerySection />

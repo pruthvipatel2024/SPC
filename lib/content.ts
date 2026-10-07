@@ -17,7 +17,7 @@ export const org = {
   location: 'Bhavnagar, Gujarat',
   mission: 'Building a Child Beggar-Free Bhavnagar.',
   tagline: 'Every child deserves a future beyond begging.',
-  instagram: 'https://www.instagram.com/shree.padma.charitable.trust',
+  instagram: 'https://www.instagram.com/shree.padma.charitable.trust/',
   instagramHandle: '@shree.padma.charitable.trust',
   // Placeholder contact details — replace with verified organization details.
   email: 'contact@shreepadmatrust.org',
@@ -30,10 +30,92 @@ export const org = {
 export const navLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Our Work', href: '#work' },
+  { label: 'Real Videos', href: '#videos' },
   { label: 'Impact', href: '#journey' },
   { label: 'Stories', href: '#stories' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Get Involved', href: '#volunteer' },
+]
+
+export type VideoPart = {
+  partNumber: number
+  partLabel: string
+  title: string
+  src: string
+  note: string
+}
+
+export type VideoStory = {
+  id: string
+  title: string
+  subtitle: string
+  category: string
+  badge: string
+  description: string
+  poster: string
+  parts: VideoPart[]
+}
+
+export const videoStories: VideoStory[] = [
+  {
+    id: 'street-outreach',
+    title: 'Street Outreach & Child Beggar Rehabilitation',
+    subtitle: 'From the Streets to Support — A 2-Part Journey',
+    category: 'Ground Action',
+    badge: '2-Part Video Series',
+    description:
+      'Watch our field volunteers and coordinators identifying vulnerable children on the streets of Bhavnagar, engaging with families, and opening the door to safety and education.',
+    poster: '/images/real-work-1.jpg',
+    parts: [
+      {
+        partNumber: 1,
+        partLabel: 'Part 1',
+        title: 'Initial Street Identification & Dialogue',
+        src: '/videos/v1-1.mp4',
+        note: 'Meeting children and families directly on the street with respect and empathy.',
+      },
+      {
+        partNumber: 2,
+        partLabel: 'Part 2',
+        title: 'Family Counseling & Rehabilitation Pathway',
+        src: '/videos/v1-2.mp4',
+        note: 'Guiding parents toward regular schooling and safe alternatives to begging.',
+      },
+    ],
+  },
+  {
+    id: 'classroom-empowerment',
+    title: 'Classroom Learning & Community Assembly',
+    subtitle: 'Building Confidence & Community Trust — A 3-Part Series',
+    category: 'Classroom & Community',
+    badge: '3-Part Video Series',
+    description:
+      'Step inside our classroom sessions and community events in Bhavnagar where children develop literacy, discipline, and the joy of learning alongside their peers.',
+    poster: '/images/real-work-2.jpg',
+    parts: [
+      {
+        partNumber: 1,
+        partLabel: 'Part 1',
+        title: 'Interactive Classroom Teaching & Exercises',
+        src: '/videos/v2-1.mp4',
+        note: 'Dedicated educators conducting foundational literacy and math sessions.',
+      },
+      {
+        partNumber: 2,
+        partLabel: 'Part 2',
+        title: 'Student Engagement & Daily Milestones',
+        src: '/videos/v2-2.mp4',
+        note: 'Children actively participating, writing, and developing learning habits.',
+      },
+      {
+        partNumber: 3,
+        partLabel: 'Part 3',
+        title: 'Community Gathering & Trust Address',
+        src: '/videos/v2-3.mp4',
+        note: 'Bringing coordinators, teachers, and families together for collective encouragement.',
+      },
+    ],
+  },
 ]
 
 // Qualitative "impact" statements — no invented numbers.
@@ -145,35 +227,133 @@ export const stories = [
 ]
 
 export const galleryImages = [
-  { src: '/images/gallery-1.png', category: 'Education', alt: 'Children raising hands in an outdoor learning session' },
-  { src: '/images/gallery-2.png', category: 'Outreach', alt: 'Volunteers distributing books and school supplies to children' },
-  { src: '/images/gallery-5.png', category: 'Children', alt: 'A smiling child in school uniform outdoors' },
-  { src: '/images/gallery-4.png', category: 'Awareness', alt: 'A community awareness gathering in a Bhavnagar neighbourhood' },
-  { src: '/images/gallery-3.png', category: 'Education', alt: "Children's hands writing in notebooks together" },
-  { src: '/images/gallery-6.png', category: 'Volunteers', alt: 'Volunteers and children together after a community event' },
-  { src: '/images/about.png', category: 'Community Work', alt: 'Volunteers teaching children in an outdoor community setting' },
-  { src: '/images/initiative.png', category: 'Outreach', alt: 'An outreach worker speaking gently with a child' },
+  {
+    src: '/images/real-work-2.jpg',
+    category: 'Classroom',
+    alt: 'Classroom learning session with Gujarati learning charts and dedicated educator in Bhavnagar',
+  },
+  {
+    src: '/images/real-work-3.jpg',
+    category: 'Community Event',
+    alt: 'Shree Padma Charitable Trust community assembly and awareness address in Bhavnagar',
+  },
+  {
+    src: '/images/real-work-1.jpg',
+    category: 'Street Outreach',
+    alt: 'Field volunteers connecting with children outdoors in Bhavnagar',
+  },
+  {
+    src: '/images/real-work-4.jpg',
+    category: 'Classroom',
+    alt: 'Teacher guiding students through interactive learning activity on the classroom floor',
+  },
 ]
 
 export const galleryFilters = [
   'All',
-  'Community Work',
-  'Education',
-  'Children',
-  'Awareness',
-  'Events',
-  'Volunteers',
-  'Outreach',
+  'Classroom',
+  'Street Outreach',
+  'Community Event',
 ]
 
-export const instagramPosts = [
-  { src: '/images/gallery-1.png', alt: 'Outdoor learning session' },
-  { src: '/images/gallery-6.png', alt: 'Volunteers and children together' },
-  { src: '/images/gallery-2.png', alt: 'Distributing school supplies' },
-  { src: '/images/gallery-5.png', alt: 'A smiling child' },
-  { src: '/images/gallery-4.png', alt: 'Community awareness gathering' },
-  { src: '/images/story-1.png', alt: 'A child with her notebook' },
+export type InstagramFeedItem = {
+  id: string
+  type: 'reel' | 'post'
+  title: string
+  caption: string
+  mediaSrc: string
+  poster: string
+  location: string
+  viewsOrLikes?: string
+}
+
+export const instagramFeed: InstagramFeedItem[] = [
+  {
+    id: 'reel-1',
+    type: 'reel',
+    title: 'Street Outreach Drive in Bhavnagar',
+    caption: 'Reaching out to children on the street and introducing the power of education. #ChildBeggarFreeBhavnagar #SPCTrust',
+    mediaSrc: '/videos/v1-1.mp4',
+    poster: '/images/real-work-1.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '1.2K views',
+  },
+  {
+    id: 'post-1',
+    type: 'post',
+    title: 'Classroom Smiles & New Beginnings',
+    caption: 'Every child deserves a warm classroom and patient mentorship. Inside one of our learning centers in Bhavnagar. 📚✨',
+    mediaSrc: '/images/real-work-2.jpg',
+    poster: '/images/real-work-2.jpg',
+    location: 'Bhavnagar Learning Center',
+    viewsOrLikes: '240 likes',
+  },
+  {
+    id: 'reel-2',
+    type: 'reel',
+    title: 'Family Counseling & Rehabilitation',
+    caption: 'Conversations with families to ensure sustained support and safety for every child. #ShreePadmaTrust',
+    mediaSrc: '/videos/v1-2.mp4',
+    poster: '/images/real-work-1.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '980 views',
+  },
+  {
+    id: 'post-2',
+    type: 'post',
+    title: 'Community Awareness Gathering',
+    caption: 'Trust coordinators and teachers coming together with parents and community leaders to stand for education.',
+    mediaSrc: '/images/real-work-3.jpg',
+    poster: '/images/real-work-3.jpg',
+    location: 'Bhavnagar Community Hall',
+    viewsOrLikes: '315 likes',
+  },
+  {
+    id: 'reel-3',
+    type: 'reel',
+    title: 'Interactive Learning & Reading Practice',
+    caption: 'Watching students gain confidence with numbers, words, and creative activities in class. 🌟',
+    mediaSrc: '/videos/v2-1.mp4',
+    poster: '/images/real-work-2.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '1.5K views',
+  },
+  {
+    id: 'post-3',
+    type: 'post',
+    title: 'Individual Attention & Mentorship',
+    caption: 'Guidance that meets each child at their own learning pace. Education transforms lives.',
+    mediaSrc: '/images/real-work-4.jpg',
+    poster: '/images/real-work-4.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '190 likes',
+  },
+  {
+    id: 'reel-4',
+    type: 'reel',
+    title: 'Classroom Milestones & Daily Growth',
+    caption: 'From hesitant first steps to active classroom participation. Every step counts! #EducationForAll',
+    mediaSrc: '/videos/v2-2.mp4',
+    poster: '/images/real-work-4.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '1.1K views',
+  },
+  {
+    id: 'reel-5',
+    type: 'reel',
+    title: 'Community Assembly & Inspiring Address',
+    caption: 'Encouraging the youth and families to build a bright, self-reliant future.',
+    mediaSrc: '/videos/v2-3.mp4',
+    poster: '/images/real-work-3.jpg',
+    location: 'Bhavnagar, Gujarat',
+    viewsOrLikes: '2.0K views',
+  },
 ]
+
+export const instagramPosts = instagramFeed.map((item) => ({
+  src: item.poster,
+  alt: item.title,
+}))
 
 export const donationTiers = [
   { amount: 500, label: '\u20B9500', note: 'Learning materials for a child' },
