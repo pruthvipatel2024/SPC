@@ -76,6 +76,11 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/80">
               <li>{org.location}</li>
               <li>
+                <a href={`tel:${org.phone.replace(/\s/g, '')}`} className="transition-colors hover:text-primary-foreground">
+                  {org.phone}
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${org.email}`} className="transition-colors hover:text-primary-foreground">
                   {org.email}
                 </a>

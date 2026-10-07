@@ -19,11 +19,10 @@ export const org = {
   tagline: 'Every child deserves a future beyond begging.',
   instagram: 'https://www.instagram.com/shree.padma.charitable.trust/',
   instagramHandle: '@shree.padma.charitable.trust',
-  // Placeholder contact details — replace with verified organization details.
-  email: 'contact@shreepadmtrust.org',
-  phone: '+91 00000 00000',
-  whatsapp: '+910000000000',
-  addressLines: ['Shree Padm Charitable Trust', 'Bhavnagar, Gujarat, India'],
+  email: 'shreepadmatrust@gmail.com',
+  phone: '+91 73839 56161',
+  whatsapp: '+917383956161',
+  addressLines: ['34, Omkar, Dharmraj Society, Airport Road, Subhashnagar', 'Bhavnagar, Gujarat, India'],
   mapQuery: 'Bhavnagar, Gujarat, India',
 }
 
