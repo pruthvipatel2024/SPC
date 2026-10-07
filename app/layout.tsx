@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display, Noto_Sans_Devanagari } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -12,6 +12,13 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
+  display: 'swap',
+})
+
+const devanagari = Noto_Sans_Devanagari({
+  subsets: ['devanagari', 'latin'],
+  variable: '--font-devanagari',
+  weight: ['400', '600', '700', '800', '900'],
   display: 'swap',
 })
 
@@ -88,7 +95,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} bg-background`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${devanagari.variable} bg-background`}>
       <body>
         <script
           type="application/ld+json"

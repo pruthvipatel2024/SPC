@@ -8,7 +8,7 @@ export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 200 200"
-      className={cn('h-10 w-10 shrink-0 drop-shadow-sm', className)}
+      className={cn('h-11 w-11 shrink-0 drop-shadow-sm', className)}
       fill="none"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
@@ -46,15 +46,56 @@ export function LogoMark({ className }: { className?: string }) {
   )
 }
 
-export function Wordmark({ className }: { className?: string }) {
+/**
+ * Authentic PADM / पद्म brand unit as designed on official signage
+ */
+export function PadmBrandBadge({ className, light = false }: { className?: string; light?: boolean }) {
   return (
-    <span className={cn('flex items-center gap-3', className)}>
+    <span className={cn('inline-flex flex-col items-center justify-center leading-none text-center select-none', className)}>
+      <span
+        className={cn(
+          'font-sans text-[0.52rem] font-bold tracking-[0.34em] uppercase translate-x-[0.09em] transition-colors',
+          light ? 'text-accent-foreground' : 'text-accent',
+        )}
+      >
+        PADM
+      </span>
+      <span
+        className={cn(
+          'font-devanagari text-xl font-black tracking-normal transition-colors -mt-0.5',
+          light ? 'text-primary-foreground' : 'text-primary',
+        )}
+      >
+        पद्म
+      </span>
+    </span>
+  )
+}
+
+/**
+ * Complete Wordmark for Navbar, Footer, and Brand headings:
+ * Displays 'श्री पद्म' in Hindi (Devanagari) with 'CHARITABLE TRUST' in English underneath.
+ */
+export function Wordmark({ className, light = false }: { className?: string; light?: boolean }) {
+  return (
+    <span className={cn('flex items-center gap-3 select-none', className)}>
       <LogoMark />
-      <span className="flex flex-col leading-none">
-        <span className="font-serif text-lg font-semibold tracking-tight text-primary">
-          Shree Padm
+      <span className="flex flex-col justify-center">
+        <span
+          className={cn(
+            'font-devanagari text-xl font-bold tracking-normal leading-tight transition-colors',
+            light ? 'text-primary-foreground' : 'text-primary',
+          )}
+        >
+          श्री पद्म
         </span>
-        <span className="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+
+        <span
+          className={cn(
+            'font-sans text-[0.6rem] font-semibold uppercase tracking-[0.24em] leading-tight transition-colors mt-0.5',
+            light ? 'text-primary-foreground/75' : 'text-muted-foreground',
+          )}
+        >
           Charitable Trust
         </span>
       </span>
