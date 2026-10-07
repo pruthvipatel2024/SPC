@@ -31,6 +31,7 @@ export const navLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Our Work', href: '#work' },
   { label: 'Real Videos', href: '#videos' },
+  { label: 'Media & News', href: '#news' },
   { label: 'Impact', href: '#journey' },
   { label: 'Stories', href: '#stories' },
   { label: 'Gallery', href: '#gallery' },
@@ -256,104 +257,126 @@ export const galleryFilters = [
   'Community Event',
 ]
 
-export type InstagramFeedItem = {
-  id: string
-  type: 'reel' | 'post'
-  title: string
-  caption: string
-  mediaSrc: string
-  poster: string
-  location: string
-  viewsOrLikes?: string
+export const founder = {
+  name: 'Puja Pandit Jani',
+  role: 'Founder & Managing Trustee',
+  titles: 'Gold Medalist Painting Artist • National Iconic Woman (2019) • Nari Ratna Awardee (2017)',
+  bio: 'Daughter of respected educator and social reformer Late Arvindbhai Pandit. Continuing her family’s legacy of public service, she initiated the mission to make Bhavnagar free of child begging. Her grassroots model has rehabilitated 82+ children into formal schooling and garnered commendation from Gujarat Home Minister Harsh Sanghavi and Prime Minister Narendra Modi.',
+  image: '/news-articles/article-8.jpg',
+  address: '34, Omkar, Dharmraj Society, Airport Road, Subhashnagar, Bhavnagar, Gujarat',
+  phone: '7211112411',
 }
 
-export const instagramFeed: InstagramFeedItem[] = [
+export type NewsArticle = {
+  id: string
+  titleGujarati: string
+  titleEnglish: string
+  publication: string
+  date?: string
+  badge: string
+  summary: string
+  image: string
+  category: 'Divya Bhaskar' | 'Gujarat Chhaya' | 'Saurashtra Aaspas' | 'Regional Press'
+}
+
+export const newsArticles: NewsArticle[] = [
   {
-    id: 'reel-1',
-    type: 'reel',
-    title: 'Street Outreach Drive in Bhavnagar',
-    caption: 'Reaching out to children on the street and introducing the power of education. #ChildBeggarFreeBhavnagar #SPCTrust',
-    mediaSrc: '/videos/v1-1.mp4',
-    poster: '/images/real-work-1.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '1.2K views',
+    id: 'news-divya-bhaskar-ahmedabad',
+    titleGujarati: '82 બાળકોને ભિક્ષાવૃત્તિમાંથી હટાવી શાળામાં ભણતાં કર્યા : ભાવનગરની દીકરીએ શરૂ કર્યું બાલ ભિક્ષુક મુક્તિ અભિયાન',
+    titleEnglish: '82 Children Rescued from Begging and Enrolled into School: Bhavnagar’s Daughter Leads Transformative Movement',
+    publication: 'Divya Bhaskar (દિવ્ય ભાસ્કર) — Monday Positive',
+    date: 'Ahmedabad Edition',
+    badge: '82 Children Milestone',
+    summary:
+      'Front-page coverage on Divya Bhaskar’s Monday Positive. Highlights Puja Pandit Jani’s comprehensive model providing clean drinking water, uniforms, teachers, and rickshaw transportation to children. Gujarat Home Minister Harsh Sanghavi praised the initiative and recommended its implementation at the state level.',
+    image: '/news-articles/article-5.jpg',
+    category: 'Divya Bhaskar',
   },
   {
-    id: 'post-1',
-    type: 'post',
-    title: 'Classroom Smiles & New Beginnings',
-    caption: 'Every child deserves a warm classroom and patient mentorship. Inside one of our learning centers in Bhavnagar. 📚✨',
-    mediaSrc: '/images/real-work-2.jpg',
-    poster: '/images/real-work-2.jpg',
-    location: 'Bhavnagar Learning Center',
-    viewsOrLikes: '240 likes',
+    id: 'news-gujarat-chhaya-law',
+    titleGujarati: 'કોઈ પણ બાળક ભીક્ષા માંગતો જ ન હોવો જોઈએ, કાયદો બનાવો : પૂજા પંડિત જાની',
+    titleEnglish: 'No Child Should Ever Have to Beg, Make Strong Laws: Exclusive Interview with Founder Puja Pandit Jani',
+    publication: 'Gujarat Chhaya (ગુજરાત છાયા)',
+    date: 'Exclusive Feature',
+    badge: 'Founder Interview',
+    summary:
+      'Full-page interview with founder Puja Pandit Jani advocating for strong legal protections against child begging, structured police coordination, parental livelihood support, and a nationwide drive against child exploitation.',
+    image: '/news-articles/article-8.jpg',
+    category: 'Gujarat Chhaya',
   },
   {
-    id: 'reel-2',
-    type: 'reel',
-    title: 'Family Counseling & Rehabilitation',
-    caption: 'Conversations with families to ensure sustained support and safety for every child. #ShreePadmaTrust',
-    mediaSrc: '/videos/v1-2.mp4',
-    poster: '/images/real-work-1.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '980 views',
+    id: 'news-gujarat-chhaya-father-legacy',
+    titleGujarati: 'એક સમાજ સુધારક શિક્ષકની દિકરી, નામ એનું પૂજા પંડિત',
+    titleEnglish: 'Daughter of a Social Reformer Teacher, Her Name is Puja Pandit',
+    publication: 'Gujarat Chhaya (ગુજરાત છાયા)',
+    date: 'Special Edition',
+    badge: 'Inspiring Legacy',
+    summary:
+      'Traces the inspirational roots back to 1982 when her father Arvindbhai Pandit established a village school in Vikliya. Highlights Prime Minister Narendra Modi’s appreciation letter and recognition of Puja Jani’s humanitarian artistry and mission.',
+    image: '/news-articles/article-3.jpg',
+    category: 'Gujarat Chhaya',
   },
   {
-    id: 'post-2',
-    type: 'post',
-    title: 'Community Awareness Gathering',
-    caption: 'Trust coordinators and teachers coming together with parents and community leaders to stand for education.',
-    mediaSrc: '/images/real-work-3.jpg',
-    poster: '/images/real-work-3.jpg',
-    location: 'Bhavnagar Community Hall',
-    viewsOrLikes: '315 likes',
+    id: 'news-divya-bhaskar-bhavnagar',
+    titleGujarati: 'ભાવનગરની દીકરીના પ્રોજેક્ટનું રાજ્યકક્ષાએ કરાયેલું અમલીકરણ',
+    titleEnglish: 'State-Level Recognition and Implementation of Bhavnagar’s Child Beggar-Free Project',
+    publication: 'Divya Bhaskar (દિવ્ય ભાસ્કર)',
+    date: 'Bhavnagar Edition',
+    badge: 'State Recognition',
+    summary:
+      'Details the step-by-step methodology: police coordination with B-Division PI Anand Desai and Lady Constable Chetna Jani, child documentation, parental counseling, and school transport assistance.',
+    image: '/news-articles/article-6.jpg',
+    category: 'Divya Bhaskar',
   },
   {
-    id: 'reel-3',
-    type: 'reel',
-    title: 'Interactive Learning & Reading Practice',
-    caption: 'Watching students gain confidence with numbers, words, and creative activities in class. 🌟',
-    mediaSrc: '/videos/v2-1.mp4',
-    poster: '/images/real-work-2.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '1.5K views',
+    id: 'news-saurashtra-aaspas',
+    titleGujarati: 'પૂજા જાની : ભાવનગરની આ યુવતી ભિક્ષુક બાળકોને "સ્વચ્છ" રાખવા અભિયાન છેડે છે',
+    titleEnglish: 'Puja Jani: Young Woman from Bhavnagar Launches Campaign for Health and Dignity of Beggar Children',
+    publication: 'Saurashtra Aaspas (સૌરાષ્ટ્ર આસપાસ)',
+    date: 'Humanitarian Profile',
+    badge: 'National Awardee',
+    summary:
+      'Profiles Gold Medalist Artist and National Iconic Woman awardee Puja Pandit Jani’s early initiative "Harsharvind Group" and street-level drives ensuring clean clothes, hygiene, medical care, and food for street children.',
+    image: '/news-articles/article-1.jpg',
+    category: 'Saurashtra Aaspas',
   },
   {
-    id: 'post-3',
-    type: 'post',
-    title: 'Individual Attention & Mentorship',
-    caption: 'Guidance that meets each child at their own learning pace. Education transforms lives.',
-    mediaSrc: '/images/real-work-4.jpg',
-    poster: '/images/real-work-4.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '190 likes',
+    id: 'news-tribute-initiative',
+    titleGujarati: 'ભાવનગરમાં બાળ-ભિક્ષુક મુક્ત અભિયાન : પિતાને શ્રદ્ધાંજલિ આપવા દીકરીની આગવી પહેલ',
+    titleEnglish: 'Child Beggar-Free Movement in Bhavnagar: Unique Initiative by Daughter Puja Pandit Jani',
+    publication: 'Regional Press Bhavnagar',
+    date: 'Field Report',
+    badge: 'Father’s Tribute',
+    summary:
+      'Report on the grassroots intervention across Bhavnagar’s Aatabhai Chowk, Gadhediya Field, Tilaknagar, and Balhanuman areas, successfully preventing child labor and petty crime through education.',
+    image: '/news-articles/article-2.jpg',
+    category: 'Regional Press',
   },
   {
-    id: 'reel-4',
-    type: 'reel',
-    title: 'Classroom Milestones & Daily Growth',
-    caption: 'From hesitant first steps to active classroom participation. Every step counts! #EducationForAll',
-    mediaSrc: '/videos/v2-2.mp4',
-    poster: '/images/real-work-4.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '1.1K views',
+    id: 'news-methodology-framework',
+    titleGujarati: 'આર્ટિસ્ટ પૂજા પંડિત-જાનીનું માનવસેવા અભિયાન અને અમલીકરણ પગલાં',
+    titleEnglish: 'Operational Framework: How 82+ Children Were Successfully Integrated into Mainstream Schooling',
+    publication: 'Divya Bhaskar Special Report',
+    date: 'Analytical Report',
+    badge: 'Action Framework',
+    summary:
+      'An analytical breakdown of the 4 pillar action plan: Police Department Alignment, Parental Economic Support (Pushcarts/Vending), Official School Enrollment & Aadhaar ID Documentation, and Transportation & Hygiene.',
+    image: '/news-articles/article-7.jpg',
+    category: 'Divya Bhaskar',
   },
   {
-    id: 'reel-5',
-    type: 'reel',
-    title: 'Community Assembly & Inspiring Address',
-    caption: 'Encouraging the youth and families to build a bright, self-reliant future.',
-    mediaSrc: '/videos/v2-3.mp4',
-    poster: '/images/real-work-3.jpg',
-    location: 'Bhavnagar, Gujarat',
-    viewsOrLikes: '2.0K views',
+    id: 'news-full-page-bhavnagar',
+    titleGujarati: 'ભાવનગરમાં બાળ-ભિક્ષુક મુક્ત અભિયાનની વિસ્તૃત સફળતા',
+    titleEnglish: 'Comprehensive Media Feature on the Transformation of Bhavnagar’s Street Children',
+    publication: 'Gujarat Regional Press',
+    date: 'Community Report',
+    badge: 'Citywide Impact',
+    summary:
+      'Full-page documentation highlighting citizen involvement, teacher dedication, and the reduction of street begging across major crossroads in Bhavnagar.',
+    image: '/news-articles/article-4.jpg',
+    category: 'Regional Press',
   },
 ]
-
-export const instagramPosts = instagramFeed.map((item) => ({
-  src: item.poster,
-  alt: item.title,
-}))
 
 export const donationTiers = [
   { amount: 500, label: '\u20B9500', note: 'Learning materials for a child' },

@@ -8,7 +8,7 @@ import { VideoSection } from '@/components/video-section'
 import { JourneySection } from '@/components/journey-section'
 import { StoriesSection } from '@/components/stories-section'
 import { GallerySection } from '@/components/gallery-section'
-import { InstagramSection } from '@/components/instagram-section'
+import { NewsSection } from '@/components/news-section'
 import { VolunteerSection } from '@/components/volunteer-section'
 import { DonationSection } from '@/components/donation-section'
 import { TransparencySection } from '@/components/transparency-section'
@@ -31,7 +31,7 @@ export default function Page() {
         <JourneySection />
         <StoriesSection />
         <GallerySection />
-        <InstagramSection />
+        <NewsSection />
         <VolunteerSection />
         <DonationSection />
         <TransparencySection />
