@@ -22,7 +22,7 @@ export const org = {
   email: 'shreepadmatrust@gmail.com',
   phone: '+91 73839 56161',
   whatsapp: '+917383956161',
-  addressLines: ['34, Omkar, Dharmraj Society, Airport Road, Subhashnagar', 'Bhavnagar, Gujarat, India'],
+  addressLines: ['Bhavnagar, Gujarat, India'],
   mapQuery: 'Bhavnagar, Gujarat, India',
 }
 
@@ -253,7 +253,7 @@ export const founder = {
   titles: 'Gold Medalist Painting Artist • National Iconic Woman (2019) • Nari Ratna Awardee (2017)',
   bio: 'Daughter of respected educator and social reformer Late Arvindbhai Pandit. Continuing her family’s legacy of public service, she initiated the mission to make Bhavnagar free of child begging. Her grassroots model has rehabilitated 82+ children into formal schooling and garnered commendation from Gujarat Home Minister Harsh Sanghavi and Prime Minister Narendra Modi.',
   image: '/news-articles/article-8.jpg',
-  address: '34, Omkar, Dharmraj Society, Airport Road, Subhashnagar, Bhavnagar, Gujarat',
+  address: 'Bhavnagar, Gujarat',
   phone: '7211112411',
 }
 
