@@ -8,9 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Maximize2,
-  Sparkles,
   Shuffle,
-  Camera,
   Play,
   Pause,
   Layers,
@@ -92,19 +90,18 @@ export function GallerySection() {
         <Reveal>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-                <Camera className="h-3.5 w-3.5" />
-                Real Ground Photography
-              </div>
-              <h2 className="mt-4 font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl lg:text-5xl">
-                Moments of Hope & Dignity.
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                Gallery
+              </p>
+              <h2 className="mt-3 font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl lg:text-5xl">
+                Moments of Hope & Dignity
               </h2>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                Authentic photographic documentation of field outreach, classroom sessions, school supply distributions, and community assemblies in Bhavnagar.
+                Photographic documentation of our field outreach, classroom sessions, school supply distributions, and community work in Bhavnagar.
               </p>
             </div>
 
-            {/* Live Auto-Tour & Shuffle Controls */}
+            {/* Auto-Tour & Shuffle Controls */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
@@ -180,12 +177,7 @@ export function GallerySection() {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Overlay Badge & Expand Icon */}
-                <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground backdrop-blur-md shadow-sm">
-                  <Sparkles className="h-3 w-3 text-accent" />
-                  <span>Featured Moment</span>
-                </div>
-
+                {/* Expand Icon */}
                 <div className="absolute right-4 top-4 z-10 rounded-full bg-black/60 p-2.5 text-white backdrop-blur-md transition-transform group-hover:scale-110">
                   <Maximize2 className="h-4 w-4" />
                 </div>
@@ -195,8 +187,8 @@ export function GallerySection() {
               <div className="flex flex-col justify-between p-6 sm:p-8 bg-card border-t border-border lg:border-t-0 lg:border-l">
                 <div>
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span className="font-semibold uppercase tracking-wider text-accent">
-                      Live Showcase
+                    <span className="font-medium text-accent">
+                      {currentSpotlight.category}
                     </span>
                     <span className="rounded-full bg-secondary px-2 py-0.5 font-mono text-[0.7rem] text-foreground">
                       {spotlightIndex + 1} of {filtered.length}

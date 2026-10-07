@@ -11,14 +11,7 @@ import {
   Volume2,
   VolumeX,
   RotateCcw,
-  Sparkles,
-  Film,
-  CheckCircle2,
   MapPin,
-  HeartHandshake,
-  GraduationCap,
-  AlertCircle,
-  Quote,
 } from 'lucide-react'
 import { videoStories, type VideoStory } from '@/lib/content'
 import { Reveal } from '@/components/reveal'
@@ -135,38 +128,22 @@ export function StoriesSection() {
   }, [currentStory.src, hasStarted])
 
   return (
-    <section id="stories" className="scroll-mt-20 bg-gradient-to-b from-foreground via-[#162320] to-foreground py-24 text-background">
+    <section id="stories" className="scroll-mt-20 bg-[#141d1b] py-24 text-background">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Section Header */}
-        <Reveal>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-                <Film className="h-3.5 w-3.5" />
-                Real Ground Video Stories
-              </div>
-              <h2 className="mt-4 font-serif text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
-                Real Stories of Change in Action.
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-background/75">
-                Authentic, continuous video footage documenting our field outreach, family counseling, and classroom learning in Bhavnagar. Every story plays in full original quality from start to finish.
-              </p>
-            </div>
-
-            {/* Quick Stats Pill */}
-            <div className="flex items-center gap-4 rounded-2xl border border-background/15 bg-background/5 p-4 backdrop-blur-md">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20 text-accent">
-                <Sparkles className="h-6 w-6" />
-              </div>
-              <div>
-                <div className="font-serif text-xl font-bold text-background">100% Real Footage</div>
-                <div className="text-xs text-background/60">Bhavnagar, Gujarat • Single Continuous Playback</div>
-              </div>
-            </div>
-          </div>
+        {/* Simple, Clean Section Header */}
+        <Reveal className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+            Video Stories
+          </p>
+          <h2 className="mt-3 font-serif text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
+            Stories of Change in Action
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-background/75">
+            Real video footage documenting our outreach, family counseling, and learning programs with children in Bhavnagar.
+          </p>
         </Reveal>
 
-        {/* Story Selector Cards / Tabs */}
+        {/* Clean Story Selector Tabs */}
         <Reveal delay={0.05} className="mt-10">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {videoStories.map((story, i) => {
@@ -177,67 +154,46 @@ export function StoriesSection() {
                   type="button"
                   onClick={() => handleSelectStory(i)}
                   className={cn(
-                    'group relative flex items-start gap-4 rounded-2xl border p-4 text-left transition-all duration-300 sm:p-5',
+                    'group flex items-center gap-4 rounded-2xl border p-4 text-left transition-all sm:p-5',
                     isSelected
-                      ? 'border-accent bg-accent/15 text-background shadow-xl ring-1 ring-accent/60'
-                      : 'border-background/15 bg-background/5 text-background/70 hover:border-background/30 hover:bg-background/10 hover:text-background',
+                      ? 'border-accent bg-accent/15 text-background shadow-sm'
+                      : 'border-background/10 bg-background/5 text-background/70 hover:border-background/25 hover:bg-background/10 hover:text-background',
                   )}
                 >
-                  {/* Thumbnail with overlay icon */}
-                  <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-xl border border-background/20 bg-background/10 sm:h-24 sm:w-32">
+                  {/* Thumbnail preview */}
+                  <div className="relative h-18 w-26 shrink-0 overflow-hidden rounded-xl bg-background/10 sm:h-20 sm:w-30">
                     <Image
                       src={story.poster}
                       alt={story.title}
                       fill
-                      sizes="150px"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="140px"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/35" />
+                    <div className="absolute inset-0 bg-black/30" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div
                         className={cn(
-                          'flex h-8 w-8 items-center justify-center rounded-full transition-transform group-hover:scale-110',
+                          'flex h-7 w-7 items-center justify-center rounded-full transition-transform group-hover:scale-110',
                           isSelected
-                            ? 'bg-accent text-accent-foreground shadow-lg'
-                            : 'bg-black/60 text-white backdrop-blur-xs',
+                            ? 'bg-accent text-accent-foreground'
+                            : 'bg-black/60 text-white',
                         )}
                       >
-                        <Play className="ml-0.5 h-3.5 w-3.5 fill-current" />
+                        <Play className="ml-0.5 h-3 w-3 fill-current" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Story Details */}
-                  <div className="flex flex-1 flex-col justify-between self-stretch">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="rounded-full bg-accent/20 px-2 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider text-accent">
-                          Story 0{i + 1}
-                        </span>
-                        <span className="text-xs text-background/60">{story.category}</span>
-                      </div>
-                      <h3 className="mt-1 font-serif text-base font-semibold leading-snug text-background sm:text-lg">
-                        {story.title}
-                      </h3>
-                    </div>
-
-                    <div className="mt-2 flex items-center justify-between gap-2 text-xs text-background/60">
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3 w-3 text-accent" />
-                        Bhavnagar
-                      </span>
-                      {isSelected ? (
-                        <span className="flex items-center gap-1.5 font-semibold text-accent">
-                          <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                          </span>
-                          Selected
-                        </span>
-                      ) : (
-                        <span className="text-background/50 group-hover:text-background/80">Click to watch</span>
-                      )}
-                    </div>
+                  {/* Story Title & Meta */}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-background/60">{story.category}</p>
+                    <h3 className="mt-1 font-serif text-base font-semibold leading-snug text-background sm:text-lg">
+                      {story.title}
+                    </h3>
+                    <p className="mt-1 flex items-center gap-1 text-xs text-background/50">
+                      <MapPin className="h-3 w-3 text-accent shrink-0" />
+                      <span>Bhavnagar, Gujarat</span>
+                    </p>
                   </div>
                 </button>
               )
@@ -245,30 +201,14 @@ export function StoriesSection() {
           </div>
         </Reveal>
 
-        {/* Main Video Cinema & Case Narrative */}
+        {/* Video Player & Natural Narrative Layout */}
         <Reveal delay={0.1} className="mt-8">
-          <div className="grid grid-cols-1 gap-8 rounded-3xl border border-background/15 bg-background/5 p-4 backdrop-blur-md sm:p-6 lg:grid-cols-[1.7fr_1.1fr] lg:gap-10 lg:p-8">
-            {/* Left Column: Full Continuous Video Player */}
+          <div className="grid grid-cols-1 gap-8 rounded-3xl border border-background/10 bg-background/5 p-4 sm:p-6 lg:grid-cols-[1.65fr_1.1fr] lg:gap-10 lg:p-8">
+            {/* Video Player Column */}
             <div className="flex flex-col">
-              {/* Header inside player box */}
-              <div className="mb-3 flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="font-semibold uppercase tracking-wider text-accent">
-                    Now Viewing:
-                  </span>
-                  <span className="font-medium text-background/80">
-                    {currentStory.title}
-                  </span>
-                </div>
-                <span className="rounded-full border border-background/20 bg-background/10 px-2.5 py-0.5 text-[0.68rem] font-medium text-accent">
-                  Full Continuous Video
-                </span>
-              </div>
-
-              {/* Video Player Box */}
               <div
                 ref={containerRef}
-                className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-background/15"
+                className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-xl ring-1 ring-background/10"
               >
                 {/* HTML5 Video */}
                 <video
@@ -291,7 +231,7 @@ export function StoriesSection() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       onClick={togglePlay}
-                      className="absolute inset-0 z-20 flex cursor-pointer flex-col items-center justify-center bg-black/45 backdrop-blur-[2px] transition-all hover:bg-black/35"
+                      className="absolute inset-0 z-20 flex cursor-pointer flex-col items-center justify-center bg-black/40 backdrop-blur-[1px] transition-all hover:bg-black/30"
                     >
                       <Image
                         src={currentStory.poster}
@@ -300,22 +240,22 @@ export function StoriesSection() {
                         className="object-cover opacity-60"
                         priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
                       <div className="relative z-10 flex flex-col items-center px-4 text-center">
                         <motion.button
-                          whileHover={{ scale: 1.1 }}
+                          whileHover={{ scale: 1.08 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-2xl transition-transform sm:h-20 sm:w-20"
-                          aria-label="Play full video"
+                          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-xl transition-transform sm:h-18 sm:w-18"
+                          aria-label="Play video"
                         >
                           <Play className="ml-1 h-7 w-7 fill-current sm:h-8 sm:w-8" />
                         </motion.button>
-                        <h3 className="mt-4 font-serif text-lg font-semibold text-background sm:text-2xl">
+                        <h3 className="mt-4 font-serif text-lg font-semibold text-background sm:text-xl">
                           {currentStory.title}
                         </h3>
-                        <p className="mt-1 text-xs text-background/80 sm:text-sm">
-                          Click to play complete footage in original high quality
+                        <p className="mt-1 text-xs text-background/75">
+                          Click to play
                         </p>
                       </div>
                     </motion.div>
@@ -328,7 +268,7 @@ export function StoriesSection() {
                     {/* Scrub Bar */}
                     <div
                       onClick={handleSeek}
-                      className="group/seek relative mb-3 h-1.5 w-full cursor-pointer rounded-full bg-white/25 transition-all hover:h-2.5"
+                      className="group/seek relative mb-3 h-1.5 w-full cursor-pointer rounded-full bg-white/25 transition-all hover:h-2"
                     >
                       <div
                         style={{ width: `${videoProgress}%` }}
@@ -371,97 +311,52 @@ export function StoriesSection() {
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <span className="hidden text-[0.7rem] text-background/60 sm:inline">
-                          Full Video Playback
-                        </span>
-                        <button
-                          type="button"
-                          onClick={toggleFullscreen}
-                          className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
-                          aria-label={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
-                        >
-                          {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-                        </button>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={toggleFullscreen}
+                        className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                        aria-label={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+                      >
+                        {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+                      </button>
                     </div>
                   </div>
                 )}
               </div>
-
-              {/* Video Description Banner */}
-              <div className="mt-4 rounded-2xl border border-background/10 bg-background/5 p-4 text-xs leading-relaxed text-background/75">
-                <p>{currentStory.description}</p>
-              </div>
             </div>
 
-            {/* Right Column: In-Depth Story Case Study & Narrative */}
-            <div className="flex flex-col justify-between border-t border-background/15 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-              <div className="space-y-5">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                    <Sparkles className="h-4 w-4" />
-                    Story Case Study
-                  </div>
-                  <h3 className="mt-1 font-serif text-2xl font-bold text-background sm:text-3xl">
-                    {currentStory.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-background/60">
-                    {currentStory.subtitle}
+            {/* Natural Narrative Column */}
+            <div className="flex flex-col justify-between space-y-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                  {currentStory.category}
+                </p>
+                <h3 className="mt-1 font-serif text-2xl font-semibold text-background sm:text-3xl">
+                  {currentStory.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-background/70">
+                  {currentStory.subtitle}
+                </p>
+
+                {/* Natural Narrative Story Text */}
+                <div className="mt-5 space-y-3 text-sm leading-relaxed text-background/85">
+                  <p>
+                    {currentStory.description}
                   </p>
-                </div>
-
-                {/* Structured Breakdown Cards */}
-                <div className="space-y-3.5">
-                  {/* Situation */}
-                  <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4">
-                    <div className="flex items-center gap-2 text-amber-400">
-                      <AlertCircle className="h-4 w-4 shrink-0" />
-                      <span className="text-xs font-bold uppercase tracking-wider">The Initial Situation</span>
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-background/80 sm:text-sm">
-                      {currentStory.situation}
-                    </p>
-                  </div>
-
-                  {/* Intervention */}
-                  <div className="rounded-2xl border border-accent/20 bg-accent/5 p-4">
-                    <div className="flex items-center gap-2 text-accent">
-                      <HeartHandshake className="h-4 w-4 shrink-0" />
-                      <span className="text-xs font-bold uppercase tracking-wider">The Trust&apos;s Intervention</span>
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-background/80 sm:text-sm">
-                      {currentStory.intervention}
-                    </p>
-                  </div>
-
-                  {/* Outcome */}
-                  <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-4">
-                    <div className="flex items-center gap-2 text-emerald-400">
-                      <GraduationCap className="h-4 w-4 shrink-0" />
-                      <span className="text-xs font-bold uppercase tracking-wider">The Lasting Outcome</span>
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-background/80 sm:text-sm">
-                      {currentStory.outcome}
-                    </p>
-                  </div>
+                  <p className="text-xs leading-relaxed text-background/70">
+                    {currentStory.intervention}
+                  </p>
                 </div>
 
                 {/* Featured Quote */}
-                <blockquote className="relative rounded-2xl border border-background/10 bg-background/5 p-4 italic text-background/90">
-                  <Quote className="absolute right-4 top-4 h-6 w-6 text-accent/20" />
-                  <p className="font-serif text-sm leading-snug sm:text-base text-pretty pr-6">
-                    &ldquo;{currentStory.quote}&rdquo;
-                  </p>
+                <blockquote className="mt-6 border-l-2 border-accent pl-4 font-serif text-base italic leading-relaxed text-background/90">
+                  &ldquo;{currentStory.quote}&rdquo;
                 </blockquote>
               </div>
 
-              {/* Verified Location & Ground Note */}
-              <div className="mt-6 flex items-center gap-2.5 rounded-2xl border border-background/10 bg-background/5 px-4 py-3 text-xs text-background/70">
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
-                <span>
-                  Recorded on location in <strong>Bhavnagar, Gujarat</strong> &bull; Shree Padm Charitable Trust
-                </span>
+              {/* Location Footer Note */}
+              <div className="text-xs text-background/50 border-t border-background/10 pt-4">
+                Location: Bhavnagar, Gujarat &bull; Shree Padm Charitable Trust
               </div>
             </div>
           </div>
