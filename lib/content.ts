@@ -191,9 +191,9 @@ export type GalleryImage = {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: '/images/real-work-10.jpg',
+    src: '/images/real-work-2.jpg',
     category: 'Classroom & Learning',
-    title: 'Classroom Mentorship',
+    title: 'Classroom Mentorship & Literacy',
     alt: 'Founder Puja Pandit Jani teaching and engaging with children during an interactive Gujarati classroom session in Bhavnagar',
   },
   {
@@ -203,15 +203,15 @@ export const galleryImages: GalleryImage[] = [
     alt: 'Children proudly sitting with their brand new school backpacks, notebooks, and stationery sets provided by the trust',
   },
   {
-    src: '/images/real-work-11.jpg',
-    category: 'Street Outreach',
-    title: 'Campus Guidance & Care',
+    src: '/images/real-work-1.jpg',
+    category: 'Rehabilitation & Campus',
+    title: 'Campus Guidance & Welfare',
     alt: 'Puja Pandit Jani standing with rehabilitated children at the educational campus entrance in Bhavnagar',
   },
   {
-    src: '/images/real-work-12.jpg',
+    src: '/images/real-work-3.jpg',
     category: 'Community & Assemblies',
-    title: 'Morning Prayer & Assembly',
+    title: 'Morning Prayer & Cultural Assembly',
     alt: 'Children performing the traditional morning school prayer with educators and trust volunteers in Bhavnagar',
   },
   {
@@ -227,12 +227,6 @@ export const galleryImages: GalleryImage[] = [
     alt: 'Young student receiving and holding her tailored formal school uniform for daily classes',
   },
   {
-    src: '/images/real-work-2.jpg',
-    category: 'Classroom & Learning',
-    title: 'Gujarati Literacy & Charts',
-    alt: 'Classroom learning session with Gujarati learning charts, alphabet boards, and dedicated educator in Bhavnagar',
-  },
-  {
     src: '/images/real-work-7.jpg',
     category: 'Community & Assemblies',
     title: 'Family & Mothers Support Drive',
@@ -244,31 +238,13 @@ export const galleryImages: GalleryImage[] = [
     title: 'School Enrollment in Action',
     alt: 'Group of newly enrolled children standing inside the school corridor ready for their class schedule',
   },
-  {
-    src: '/images/real-work-1.jpg',
-    category: 'Street Outreach',
-    title: 'Ground Outreach at Crossroads',
-    alt: 'Field volunteers connecting directly with vulnerable children outdoors across Bhavnagar',
-  },
-  {
-    src: '/images/real-work-4.jpg',
-    category: 'Classroom & Learning',
-    title: 'Interactive Floor Learning',
-    alt: 'Teacher guiding students through interactive learning games and drawing on the classroom floor',
-  },
-  {
-    src: '/images/real-work-3.jpg',
-    category: 'Community & Assemblies',
-    title: 'Community Awareness Gathering',
-    alt: 'Shree Padm Charitable Trust community assembly and awareness address with parents in Bhavnagar',
-  },
 ]
 
 export const galleryFilters = [
   'All',
   'Classroom & Learning',
   'School Supplies',
-  'Street Outreach',
+  'Rehabilitation & Campus',
   'Community & Assemblies',
 ]
 
