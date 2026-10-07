@@ -141,60 +141,64 @@ export function GallerySection() {
         <Reveal delay={0.05} className="mt-10">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr]">
-              {/* Spotlight Image with Smooth Crossfade */}
+              {/* Spotlight Image with Smooth Crossfade and Full Uncropped Aspect Ratio */}
               <div
-                className="group relative aspect-16/10 w-full cursor-pointer overflow-hidden bg-muted sm:aspect-16/9 lg:aspect-auto lg:min-h-[420px]"
+                className="group relative aspect-16/10 w-full cursor-pointer overflow-hidden bg-foreground/95 sm:aspect-16/9 lg:aspect-auto lg:min-h-[440px]"
                 onClick={() => openLightbox(spotlightIndex)}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSpotlight.src}
-                    initial={{ opacity: 0, scale: 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="absolute inset-0 flex items-center justify-center overflow-hidden"
                   >
+                    {/* Ambient Blurred Background (Ensures zero black letterboxes while matching photo colors) */}
                     <Image
                       src={currentSpotlight.src}
-                      alt={currentSpotlight.alt}
+                      alt=""
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 65vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover opacity-35 blur-xl scale-110"
+                      aria-hidden="true"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-black/35" />
+
+                    {/* True Full Uncropped Photo (Perfect for both vertical/portrait and horizontal shots) */}
+                    <div className="relative h-full w-full p-3 sm:p-5 flex items-center justify-center">
+                      <Image
+                        src={currentSpotlight.src}
+                        alt={currentSpotlight.alt}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 65vw"
+                        className="object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-102"
+                      />
+                    </div>
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Overlay Badge & Expand Icon */}
                 <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground backdrop-blur-md shadow-sm">
                   <Sparkles className="h-3 w-3 text-accent" />
-                  <span>Featured Live Moment</span>
+                  <span>Featured Moment</span>
                 </div>
 
-                <div className="absolute right-4 top-4 z-10 rounded-full bg-black/50 p-2.5 text-white backdrop-blur-md transition-transform group-hover:scale-110">
+                <div className="absolute right-4 top-4 z-10 rounded-full bg-black/60 p-2.5 text-white backdrop-blur-md transition-transform group-hover:scale-110">
                   <Maximize2 className="h-4 w-4" />
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 z-10 text-white sm:bottom-6 sm:left-6 sm:right-6">
-                  <span className="rounded-full bg-accent/90 px-2.5 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider text-accent-foreground">
-                    {currentSpotlight.category}
-                  </span>
-                  <h3 className="mt-2 font-serif text-xl font-bold leading-tight sm:text-2xl text-balance">
-                    {currentSpotlight.title}
-                  </h3>
                 </div>
               </div>
 
               {/* Spotlight Details & Controls */}
-              <div className="flex flex-col justify-between p-6 sm:p-8 bg-card">
+              <div className="flex flex-col justify-between p-6 sm:p-8 bg-card border-t border-border lg:border-t-0 lg:border-l">
                 <div>
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span className="font-semibold uppercase tracking-wider text-accent">
                       Live Showcase
                     </span>
-                    <span>
+                    <span className="rounded-full bg-secondary px-2 py-0.5 font-mono text-[0.7rem] text-foreground">
                       {spotlightIndex + 1} of {filtered.length}
                     </span>
                   </div>
@@ -202,15 +206,18 @@ export function GallerySection() {
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentSpotlight.src}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4 }}
-                      className="mt-4"
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.35 }}
+                      className="mt-5"
                     >
-                      <h4 className="font-serif text-2xl font-semibold text-foreground">
+                      <span className="inline-block rounded-full bg-accent/15 px-3 py-1 text-xs font-bold text-accent">
+                        {currentSpotlight.category}
+                      </span>
+                      <h3 className="mt-3 font-serif text-2xl font-bold text-foreground sm:text-3xl leading-snug">
                         {currentSpotlight.title}
-                      </h4>
+                      </h3>
                       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                         {currentSpotlight.alt}
                       </p>
@@ -227,7 +234,7 @@ export function GallerySection() {
                           key={img.src}
                           type="button"
                           onClick={() => setSpotlightIndex(idx)}
-                          aria-label={`Go to slide ${idx + 1}`}
+                          aria-label={`Go to photo ${idx + 1}`}
                           className={cn(
                             'h-2 rounded-full transition-all duration-300',
                             spotlightIndex === idx
@@ -245,7 +252,7 @@ export function GallerySection() {
                           setSpotlightIndex((prev) => (prev - 1 + filtered.length) % filtered.length)
                         }
                         className="rounded-full border border-border p-2 text-foreground transition-colors hover:bg-secondary/60"
-                        aria-label="Previous moment"
+                        aria-label="Previous photo"
                       >
                         <ChevronLeft className="h-4 w-4" />
                       </button>
@@ -253,7 +260,7 @@ export function GallerySection() {
                         type="button"
                         onClick={() => setSpotlightIndex((prev) => (prev + 1) % filtered.length)}
                         className="rounded-full border border-border p-2 text-foreground transition-colors hover:bg-secondary/60"
-                        aria-label="Next moment"
+                        aria-label="Next photo"
                       >
                         <ChevronRight className="h-4 w-4" />
                       </button>
@@ -330,7 +337,7 @@ export function GallerySection() {
                     alt={img.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-108"
+                    className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-108"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
 
