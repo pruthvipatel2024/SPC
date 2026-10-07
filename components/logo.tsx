@@ -78,12 +78,12 @@ export function PadmBrandBadge({ className, light = false }: { className?: strin
  */
 export function Wordmark({ className, light = false }: { className?: string; light?: boolean }) {
   return (
-    <span className={cn('flex items-center gap-3 select-none', className)}>
-      <LogoMark />
+    <span className={cn('flex items-center gap-3.5 select-none', className)}>
+      <LogoMark className="h-12 w-12" />
       <span className="flex flex-col justify-center">
         <span
           className={cn(
-            'font-devanagari text-xl font-bold tracking-normal leading-tight transition-colors',
+            'font-devanagari text-2xl sm:text-[1.7rem] font-bold tracking-tight leading-none transition-colors',
             light ? 'text-primary-foreground' : 'text-primary',
           )}
         >
@@ -92,7 +92,7 @@ export function Wordmark({ className, light = false }: { className?: string; lig
 
         <span
           className={cn(
-            'font-sans text-[0.6rem] font-semibold uppercase tracking-[0.24em] leading-tight transition-colors mt-0.5',
+            'font-sans text-[0.62rem] sm:text-[0.68rem] font-semibold uppercase tracking-[0.22em] leading-none transition-colors mt-1',
             light ? 'text-primary-foreground/75' : 'text-muted-foreground',
           )}
         >
