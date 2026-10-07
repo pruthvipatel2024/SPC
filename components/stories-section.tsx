@@ -460,7 +460,7 @@ export function StoriesSection() {
               <div className="mt-6 flex items-center gap-2.5 rounded-2xl border border-background/10 bg-background/5 px-4 py-3 text-xs text-background/70">
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
                 <span>
-                  Recorded on location in <strong>Bhavnagar, Gujarat</strong> &bull; Shree Padma Charitable Trust
+                  Recorded on location in <strong>Bhavnagar, Gujarat</strong> &bull; Shree Padm Charitable Trust
                 </span>
               </div>
             </div>

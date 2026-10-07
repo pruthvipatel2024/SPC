@@ -21,7 +21,7 @@ export function Hero() {
       <motion.div style={{ y: imageY, scale: imageScale }} className="absolute inset-0">
         <Image
           src="/images/hero.png"
-          alt="Children learning together with the support of Shree Padma Charitable Trust in Bhavnagar"
+          alt="Children learning together with the support of Shree Padm Charitable Trust in Bhavnagar"
           fill
           priority
           sizes="100vw"

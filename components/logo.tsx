@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils'
 
 /**
- * Official logo emblem of Shree Padma Charitable Trust (S.P.C. Seva Trust).
- * Represents a parent and child figure nurtured within an open lotus ("Padma") blossom.
+ * Official logo emblem of Shree Padm Charitable Trust (S.P.C. Seva Trust).
+ * Represents a parent and child figure nurtured within an open lotus blossom.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
@@ -52,7 +52,7 @@ export function Wordmark({ className }: { className?: string }) {
       <LogoMark />
       <span className="flex flex-col leading-none">
         <span className="font-serif text-lg font-semibold tracking-tight text-primary">
-          Shree Padma
+          Shree Padm
         </span>
         <span className="mt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Charitable Trust

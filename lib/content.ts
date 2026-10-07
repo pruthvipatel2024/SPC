@@ -1,5 +1,5 @@
 /**
- * Central content source for Shree Padma Charitable Trust.
+ * Central content source for Shree Padm Charitable Trust.
  *
  * This file is intentionally structured so every list below can later be
  * moved to a CMS/database without touching the components. Components read
@@ -12,7 +12,7 @@
  */
 
 export const org = {
-  name: 'Shree Padma Charitable Trust',
+  name: 'Shree Padm Charitable Trust',
   shortName: 'S.P.C. Seva Trust',
   location: 'Bhavnagar, Gujarat',
   mission: 'Building a Child Beggar-Free Bhavnagar.',
@@ -20,10 +20,10 @@ export const org = {
   instagram: 'https://www.instagram.com/shree.padma.charitable.trust/',
   instagramHandle: '@shree.padma.charitable.trust',
   // Placeholder contact details — replace with verified organization details.
-  email: 'contact@shreepadmatrust.org',
+  email: 'contact@shreepadmtrust.org',
   phone: '+91 00000 00000',
   whatsapp: '+910000000000',
-  addressLines: ['Shree Padma Charitable Trust', 'Bhavnagar, Gujarat, India'],
+  addressLines: ['Shree Padm Charitable Trust', 'Bhavnagar, Gujarat, India'],
   mapQuery: 'Bhavnagar, Gujarat, India',
 }
 
@@ -175,7 +175,7 @@ export const galleryImages = [
   {
     src: '/images/real-work-3.jpg',
     category: 'Community Event',
-    alt: 'Shree Padma Charitable Trust community assembly and awareness address in Bhavnagar',
+    alt: 'Shree Padm Charitable Trust community assembly and awareness address in Bhavnagar',
   },
   {
     src: '/images/real-work-1.jpg',

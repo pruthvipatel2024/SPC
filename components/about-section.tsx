@@ -10,7 +10,7 @@ export function AboutSection() {
           <div className="relative aspect-4/5 overflow-hidden rounded-3xl">
             <Image
               src="/images/about.png"
-              alt="Volunteers of Shree Padma Charitable Trust teaching children in an outdoor community setting"
+              alt="Volunteers of Shree Padm Charitable Trust teaching children in an outdoor community setting"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -32,7 +32,7 @@ export function AboutSection() {
               Turning compassion into action.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Shree Padma Charitable Trust works directly with vulnerable children
+              Shree Padm Charitable Trust works directly with vulnerable children
               and communities in Bhavnagar, Gujarat. Our focus is clear: to move
               children away from begging and toward education, guidance and lasting
               opportunity.

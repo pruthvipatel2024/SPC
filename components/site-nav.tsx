@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X, Heart } from 'lucide-react'
-import { navLinks } from '@/lib/content'
+import { navLinks, org } from '@/lib/content'
 import { Wordmark } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
@@ -42,7 +42,7 @@ export function SiteNav() {
           )}
           aria-label="Primary"
         >
-          <a href="#top" className="shrink-0" aria-label={`${'Shree Padma Charitable Trust'} home`}>
+          <a href="#top" className="shrink-0" aria-label={`${org.name} home`}>
             <Wordmark />
           </a>
 

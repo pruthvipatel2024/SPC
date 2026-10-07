@@ -20,14 +20,14 @@ const SITE_URL = 'https://shreepadmacharitabletrust.org'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Shree Padma Charitable Trust — Building a Child Beggar-Free Bhavnagar',
-    template: '%s | Shree Padma Charitable Trust',
+    default: 'Shree Padm Charitable Trust — Building a Child Beggar-Free Bhavnagar',
+    template: '%s | Shree Padm Charitable Trust',
   },
   description:
-    'Shree Padma Charitable Trust (S.P.C. Seva Trust) works in Bhavnagar, Gujarat to move children away from begging and toward education, dignity and opportunity. Support our mission for a Child Beggar-Free Bhavnagar.',
+    'Shree Padm Charitable Trust (S.P.C. Seva Trust) works in Bhavnagar, Gujarat to move children away from begging and toward education, dignity and opportunity. Support our mission for a Child Beggar-Free Bhavnagar.',
   keywords: [
-    'Shree Padma Charitable Trust',
-    'Shree Padma Charitable Trust Bhavnagar',
+    'Shree Padm Charitable Trust',
+    'Shree Padm Charitable Trust Bhavnagar',
     'S.P.C. Seva Trust',
     'NGO in Bhavnagar',
     'child welfare NGO Bhavnagar',
@@ -36,20 +36,20 @@ export const metadata: Metadata = {
     'child education Gujarat',
     'child welfare Gujarat',
   ],
-  authors: [{ name: 'Shree Padma Charitable Trust' }],
+  authors: [{ name: 'Shree Padm Charitable Trust' }],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: SITE_URL,
-    siteName: 'Shree Padma Charitable Trust',
-    title: 'Shree Padma Charitable Trust — Building a Child Beggar-Free Bhavnagar',
+    siteName: 'Shree Padm Charitable Trust',
+    title: 'Shree Padm Charitable Trust — Building a Child Beggar-Free Bhavnagar',
     description:
       'Helping children in Bhavnagar move from the streets toward education, dignity and opportunity.',
-    images: [{ url: '/images/hero.png', width: 1200, height: 630, alt: 'Children learning with the support of Shree Padma Charitable Trust' }],
+    images: [{ url: '/images/hero.png', width: 1200, height: 630, alt: 'Children learning with the support of Shree Padm Charitable Trust' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shree Padma Charitable Trust — Building a Child Beggar-Free Bhavnagar',
+    title: 'Shree Padm Charitable Trust — Building a Child Beggar-Free Bhavnagar',
     description:
       'Helping children in Bhavnagar move from the streets toward education, dignity and opportunity.',
     images: ['/images/hero.png'],
@@ -72,7 +72,7 @@ export default function RootLayout({
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'NGO',
-    name: 'Shree Padma Charitable Trust',
+    name: 'Shree Padm Charitable Trust',
     alternateName: 'S.P.C. Seva Trust',
     description:
       'Charitable organization in Bhavnagar, Gujarat working toward a Child Beggar-Free Bhavnagar by connecting vulnerable children with education, guidance, dignity and opportunity.',
