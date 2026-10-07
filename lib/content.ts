@@ -30,21 +30,12 @@ export const org = {
 export const navLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Our Work', href: '#work' },
-  { label: 'Real Videos', href: '#videos' },
-  { label: 'Media & News', href: '#news' },
   { label: 'Impact', href: '#journey' },
-  { label: 'Stories', href: '#stories' },
+  { label: 'Video Stories', href: '#stories' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'Media & News', href: '#news' },
   { label: 'Get Involved', href: '#volunteer' },
 ]
-
-export type VideoPart = {
-  partNumber: number
-  partLabel: string
-  title: string
-  src: string
-  note: string
-}
 
 export type VideoStory = {
   id: string
@@ -52,70 +43,49 @@ export type VideoStory = {
   subtitle: string
   category: string
   badge: string
+  location: string
+  situation: string
+  intervention: string
+  outcome: string
+  quote: string
   description: string
+  src: string
   poster: string
-  parts: VideoPart[]
+  durationLabel: string
 }
 
 export const videoStories: VideoStory[] = [
   {
     id: 'street-outreach',
-    title: 'Street Outreach & Child Beggar Rehabilitation',
-    subtitle: 'From the Streets to Support — A 2-Part Journey',
-    category: 'Ground Action',
-    badge: '2-Part Video Series',
-    description:
-      'Watch our field volunteers and coordinators identifying vulnerable children on the streets of Bhavnagar, engaging with families, and opening the door to safety and education.',
+    title: 'From Streets to School: Direct Field Outreach',
+    subtitle: 'Meeting children at traffic intersections and opening the doorway to education',
+    category: 'Ground Outreach',
+    badge: 'Real Work Video',
+    location: 'Crossroads & Slums of Bhavnagar, Gujarat',
+    situation: 'Children spending long hours seeking coins at busy traffic junctions.',
+    intervention: 'Dedicated outreach workers holding empathetic family dialogues and securing school enrollments.',
+    outcome: 'A daily routine built around books and learning rather than the street.',
+    quote: 'Behind every child we meet on the street is a story, a family, and a future waiting to be supported.',
+    description: 'Watch the complete on-the-ground documentation as our team meets vulnerable children and families across Bhavnagar, guiding parents and providing immediate educational pathways.',
+    src: '/videos/story-street-outreach.mp4',
     poster: '/images/real-work-1.jpg',
-    parts: [
-      {
-        partNumber: 1,
-        partLabel: 'Part 1',
-        title: 'Initial Street Identification & Dialogue',
-        src: '/videos/v1-1.mp4',
-        note: 'Meeting children and families directly on the street with respect and empathy.',
-      },
-      {
-        partNumber: 2,
-        partLabel: 'Part 2',
-        title: 'Family Counseling & Rehabilitation Pathway',
-        src: '/videos/v1-2.mp4',
-        note: 'Guiding parents toward regular schooling and safe alternatives to begging.',
-      },
-    ],
+    durationLabel: 'Full Video',
   },
   {
     id: 'classroom-empowerment',
-    title: 'Classroom Learning & Community Assembly',
-    subtitle: 'Building Confidence & Community Trust — A 3-Part Series',
+    title: 'Classroom Learning & Community Empowerment',
+    subtitle: 'Building literacy, life skills, and collective hope among children and families',
     category: 'Classroom & Community',
-    badge: '3-Part Video Series',
-    description:
-      'Step inside our classroom sessions and community events in Bhavnagar where children develop literacy, discipline, and the joy of learning alongside their peers.',
+    badge: 'Real Work Video',
+    location: 'Bhavnagar Learning Center & Community Hall',
+    situation: 'Children who had never sat inside a formal, encouraging classroom environment.',
+    intervention: 'Patient foundational education, writing practice, and community awareness assemblies with educators.',
+    outcome: 'Growing confidence, active participation, and genuine joy in reading and writing.',
+    quote: 'When a child feels they belong in a classroom, their entire world begins to transform.',
+    description: 'Step inside our classroom sessions and community events in Bhavnagar where children develop foundational literacy and discipline with dedicated teachers.',
+    src: '/videos/story-classroom-community.mp4',
     poster: '/images/real-work-2.jpg',
-    parts: [
-      {
-        partNumber: 1,
-        partLabel: 'Part 1',
-        title: 'Interactive Classroom Teaching & Exercises',
-        src: '/videos/v2-1.mp4',
-        note: 'Dedicated educators conducting foundational literacy and math sessions.',
-      },
-      {
-        partNumber: 2,
-        partLabel: 'Part 2',
-        title: 'Student Engagement & Daily Milestones',
-        src: '/videos/v2-2.mp4',
-        note: 'Children actively participating, writing, and developing learning habits.',
-      },
-      {
-        partNumber: 3,
-        partLabel: 'Part 3',
-        title: 'Community Gathering & Trust Address',
-        src: '/videos/v2-3.mp4',
-        note: 'Bringing coordinators, teachers, and families together for collective encouragement.',
-      },
-    ],
+    durationLabel: 'Full Video',
   },
 ]
 
@@ -194,38 +164,8 @@ export const journeyStages = [
   { label: 'Future', note: 'A safer, more independent path ahead.' },
 ]
 
-// Stories are illustrative composites written to protect privacy and dignity.
-// Replace with consented, verified stories from the organization.
-export const stories = [
-  {
-    image: '/images/story-1.png',
-    alt: 'A hopeful young girl holding a school notebook in a classroom',
-    title: 'From the Streets to the Classroom',
-    situation: 'A child spending long days seeking coins at a busy junction.',
-    intervention: 'Outreach, family conversations and help enrolling in school.',
-    outcome: 'A daily routine now built around learning rather than the street.',
-    quote:
-      'Behind every child we meet is a story, a family and a future waiting to be supported.',
-  },
-  {
-    image: '/images/story-2.png',
-    alt: 'A young boy in school uniform writing on a slate',
-    title: 'A Place to Belong',
-    situation: 'A boy who had never sat inside a classroom.',
-    intervention: 'Patient guidance, learning support and encouragement.',
-    outcome: 'Growing confidence and a genuine love for writing and reading.',
-    quote: 'When a child feels they belong, everything begins to change.',
-  },
-  {
-    image: '/images/story-3.png',
-    alt: 'A mother and her child smiling together outside their home',
-    title: 'Families at the Centre',
-    situation: 'A family unsure how education could fit into daily survival.',
-    intervention: 'Trust, guidance and practical support over time.',
-    outcome: 'A family that now sees school as part of their child\u2019s future.',
-    quote: 'Change lasts when the whole family can believe in it.',
-  },
-]
+// Real work video stories are documented in videoStories above.
+
 
 export const galleryImages = [
   {
