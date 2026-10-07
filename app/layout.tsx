@@ -61,6 +61,13 @@ export const metadata: Metadata = {
       'Helping children in Bhavnagar move from the streets toward education, dignity and opportunity.',
     images: ['/images/hero.png'],
   },
+  icons: {
+    icon: [
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
   generator: 'v0.app',
 }
 
